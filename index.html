@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Calidad de Agua - LPM</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>💧 Evaluación de Agua de Mina</h1>
+        <p>Ingrese los parámetros para calcular según el Límite Máximo Permisible.</p>
+
+        <div class="main-layout">
+            <div class="input-section">
+                <h2>Ingreso de Datos</h2>
+                <div id="waterForm"> 
+                    <h3>Físicoquímicos</h3>
+                    <div class="input-group">
+                        <label>pH:</label>
+                        <input type="number" id="ph" step="0.1" value="7">
+                    </div>
+                    <div class="input-group">
+                        <label>SST (mg/L):</label>
+                        <input type="number" id="sst" step="0.1" value="10">
+                    </div>
+                    <div class="input-group">
+                        <label>Aceites y Grasas (mg/L):</label>
+                        <input type="number" id="aceites" step="0.1" value="5">
+                    </div>
+
+                    <h3>Metales Esenciales</h3>
+                    <div class="input-group">
+                        <label>Cobre Total (mg/L):</label>
+                        <input type="number" id="cobre" step="0.01" value="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label>Hierro Total (mg/L):</label>
+                        <input type="number" id="hierro" step="0.01" value="0.5">
+                    </div>
+                    <div class="input-group">
+                        <label>Zinc Total (mg/L):</label>
+                        <input type="number" id="zinc" step="0.01" value="0.5">
+                    </div>
+
+                    <h3>Compuestos Tóxicos</h3>
+                    <div class="input-group">
+                        <label>Arsénico Total (mg/L):</label>
+                        <input type="number" id="arsenico" step="0.001" value="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label>Cadmio Total (mg/L):</label>
+                        <input type="number" id="cadmio" step="0.001" value="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label>Cromo Hexavalente (mg/L):</label>
+                        <input type="number" id="cromo" step="0.001" value="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label>Mercurio Total (mg/L):</label>
+                        <input type="number" id="mercurio" step="0.0001" value="0.001">
+                    </div>
+                    <div class="input-group">
+                        <label>Cianuro Total (mg/L):</label>
+                        <input type="number" id="cianuro" step="0.01" value="0.1">
+                    </div>
+
+                    <button type="button" onclick="evaluar()">Evaluar Calidad</button>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2>Resultados del Análisis</h2>
+                <div id="textResult" class="text-output">Los resultados aparecerán aquí...</div>
+                
+                <div class="charts-grid">
+                    <div class="chart-container"><canvas id="chartBar"></canvas></div>
+                    <div class="chart-container"><canvas id="chartLine"></canvas></div>
+                    <div class="chart-container"><canvas id="chartScatter"></canvas></div>
+                    <div class="chart-container"><canvas id="chartHBar"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
